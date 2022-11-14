@@ -1,0 +1,79 @@
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header card-header-tabs card-header-primary">
+                        <div class="nav-tabs-navigation">
+                            <div class="nav-tabs-wrapper">
+                                <span class="nav-tabs-title">Roles:</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                          <table class="table">
+                              <thead class=" text-primary">
+                                <tr>           
+                                  <th *ngFor="let head of headers">{{head}}</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr *ngFor="let item of roles">           
+                                  <td *ngFor="let list of headers">{{item[list]}}</td>
+                                  <td class="td-actions text-right">
+                                    <button mat-raised-button type="button" (click)="editRole(item)" matTooltip="Edit Role" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
+                                        <i class="material-icons">edit</i>
+                                    </button>
+                                    <button mat-raised-button type="button" (click)="deleteRole(item)" matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                        <i class="material-icons">close</i>
+                                    </button>
+                                   </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <div align="center"><button mat-raised-button (click)="addRole()" class="btn btn-primary">Add Role</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header card-header-tabs card-header-primary">
+                        <div class="nav-tabs-navigation">
+                            <div class="nav-tabs-wrapper">
+                                <span class="nav-tabs-title">Departments:</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                          <table class="table">
+                              <thead class=" text-primary">
+                                <tr>           
+                                  <th *ngFor="let head of headers">{{head}}</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr *ngFor="let item of departments">           
+                                  <td *ngFor="let list of headers">{{item[list]}}</td>
+                                  <td class="td-actions text-right">
+                                    <button mat-raised-button type="button" (click)="editDepartment(item)" matTooltip="Edit Department" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
+                                        <i class="material-icons">edit</i>
+                                    </button>
+                                    <button mat-raised-button type="button" (click)="deleteDepartment(item)" matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                        <i class="material-icons">close</i>
+                                    </button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <div align="center"><button mat-raised-button (click)="addDepartment()" class="btn btn-primary">Add Department</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>

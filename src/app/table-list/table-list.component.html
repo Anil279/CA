@@ -1,0 +1,55 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div align="center">
+      <button mat-raised-button color="primary" (click)="addEmployeeDetails()">
+        Add Employee
+      </button>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class="text-primary">
+                  <tr>
+                    <th *ngFor="let head of headers">{{ head.name }}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of employeeData">
+                    <td>{{ item.email }}</td>
+                    <td>{{ item.empId }}</td>
+                    <td>{{ item.empName }}</td>
+                    <td>{{ item.phoneNo }}</td>
+                    <td>{{ item.address }}</td>
+                    <td>{{ item.roleName }}</td>
+                    <td>{{ item.departmentName }}</td>
+                    <td>
+                      <button
+                        mat-raised-button
+                        color="primary"
+                        (click)="editDetails(item)"
+                      >
+                        edit
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        mat-raised-button
+                        color="warn"
+                        (click)="deleteDetails(item)"
+                      >
+                        delete
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
